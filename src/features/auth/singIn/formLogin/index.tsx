@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 import Notification from "@/components/notificationSend";
 import { setToken, setUser, setRefreshToken, NotificationError } from "@/utils/index";
 import { setHeader } from "@/api/axiosService";
-import ButtonForeign from "./ButtonForeign";
 import TEXT_COMMON from "@/constants/text";
 import { HEADER } from "@/constants/index";
 
@@ -85,9 +84,9 @@ const FormRegister = () => {
           className="btn__submit"
           loading={loading}
         />
-        <div className="btn__login-foreign">
+        {/* <div className="btn__login-foreign">
           <ButtonForeign />
-        </div>
+        </div> */}
       </Form>
     </div>
   );

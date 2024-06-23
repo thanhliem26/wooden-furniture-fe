@@ -20,7 +20,6 @@ export const handleSetImage = (FileList, setValue) => {
 
   if (!imageEnabled) return;
 
-  // eslint-disable-next-line
   //@ts-ignore
   return new Promise(async (resolve, reject) => {
     const imageURL = await handleGetURL(imageEnabled);

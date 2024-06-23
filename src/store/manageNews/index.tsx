@@ -80,8 +80,8 @@ export const manageNewsSlice = createSlice({
         // Add reducers for additional action types here, and handle loading state as needed
 
         builder.addCase(searchNews.fulfilled, (state, action) => {
-            // const { count, rows } = action.payload;
-            // state = { ...state, loading: false, total: count, newsList: rows.map((item, index) => ({ ...item, key: index })) }
+            const { count, rows } = action.payload;
+            state = { ...state, loading: false, total: count, newsList: rows.map((item, index) => ({ ...item, key: index })) }
 
             return state;
         }).addCase(searchNews.pending, (state) => {
