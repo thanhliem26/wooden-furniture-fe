@@ -1,0 +1,63 @@
+.modal__comment-delete {
+  width: 100%;
+
+  :global {
+    .ant-modal-header {
+      .ant-modal-title {
+        font-size: 20px;
+        border-bottom: 1px solid #cec9c9;
+        padding-bottom: 10px;
+      }
+    }
+
+    .ant-modal-body {
+      .modal__body {
+        p {
+          font-size: 16px;
+          padding: 20px 0;
+        }
+      }
+    }
+
+    .ant-modal-footer {
+      .modal__footer {
+        button {
+          -webkit-appearance: none;
+          appearance: none;
+          background-color: white;
+          border: 1px solid#f05123;
+          border-radius: 999px !important;
+          color: #f05123;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: 600;
+          outline: none;
+          padding: 9px 16px;
+          text-align: center;
+          transition: 0.3s ease;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          white-space: nowrap;
+          cursor: pointer;
+          opacity: 1;
+          transition: all .3s ease-in-out;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        .btn__cancel {
+          
+        }
+
+        .btn__submit {
+            background-color: #f05123;;
+            color: white;
+            margin-left: 8px;
+        }
+      }
+    }
+  }
+}

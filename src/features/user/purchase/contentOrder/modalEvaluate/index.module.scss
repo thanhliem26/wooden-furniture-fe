@@ -1,0 +1,132 @@
+.modal__evaluate {
+  width: 100%;
+
+  :global {
+    .ant-modal-header {
+      .ant-modal-title {
+        text-transform: capitalize;
+        font-size: 20px;
+      }
+    }
+
+    .change__field-evaluate {
+      width: 100%;
+      margin-top: 20px;
+
+      .product__evaluate {
+        display: flex;
+        gap: 10px;
+        border-bottom: 1px solid #e2dcdc;
+
+        .product__evaluate-image {
+          width: 80px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .product__evaluate-content {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .product__name {
+            span {
+              font-size: 16px;
+              font-weight: 600;
+            }
+          }
+
+          .product__description {
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .description__evaluate {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        .evaluate__edit {
+          display: flex;
+          gap: 10px;
+
+          .evaluate__user {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .evaluate__content {
+            .content__name {
+              span {
+                font-size: 12px;
+                font-weight: 600;
+              }
+            }
+
+            .content__star {
+              display: flex;
+              gap: 5px;
+              margin-bottom: 5px;
+              .evaluate__star {
+                width: 12px;
+              }
+            }
+
+            .content__description {
+              p {
+              }
+            }
+
+            .content__date {
+              span {
+                font-size: 12px;
+                color: #bbb;
+              }
+            }
+          }
+        }
+
+        .evaluate__starts {
+          display: flex;
+
+          .evaluate__star {
+            svg {
+              width: 20px !important;
+            }
+          }
+        }
+      }
+
+      .button__footer {
+        display: flex;
+        justify-content: flex-end;
+
+        .ant-form-item-control-input-content {
+          height: 100%;
+        }
+
+        .btn__tab {
+          .ant-form-item-control {
+            margin: 0;
+          }
+        }
+
+        .btn__submit {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

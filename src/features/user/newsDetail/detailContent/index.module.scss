@@ -1,0 +1,111 @@
+.detail__content {
+  width: 100%;
+  box-shadow: 0 1px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  &:hover {
+    box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  :global {
+    .detail__content-title {
+      padding: 24px;
+
+      .content__title {
+        margin-bottom: 5px;
+        h6 {
+          font-size: 0.8em;
+          line-height: 1.05;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+
+          a {
+            color: #1c1c1c;
+
+            &:hover {
+              color: #d09f11;
+            }
+          }
+        }
+      }
+
+      .content__title-name {
+        h1 {
+          font-size: 1.7em;
+          line-height: 1.3;
+          margin-top: 0;
+          font-weight: 500;
+        }
+      }
+
+      .content__title-date {
+        span {
+          font-size: 1em;
+          line-height: 1.2;
+          text-transform: uppercase;
+          color: #353535;
+        }
+      }
+    }
+
+    .detail__content-image {
+      position: relative;
+
+      .content__image {
+        width: 100%;
+        height: 485px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .content__image-date {
+        position: absolute;
+        top: 7%;
+        display: table;
+        z-index: 20;
+        pointer-events: none;
+        height: 3.2em;
+        width: 3.2em;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        left: -10px;
+
+        .badge-inner {
+          background-color: white;
+          border: 2px solid black;
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+          line-height: 0.85;
+          font-weight: bolder;
+          padding: 2px;
+          white-space: nowrap;
+          transition: background-color 0.3s, color 0.3s, border 0.3s;
+
+          &:hover {
+            background-color: black;
+            color: white;
+          }
+
+          .is-xsmall {
+            font-size: 0.7rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .detail__content-markdown {
+        padding: 24px;
+
+        img {
+            width: 100%;
+        }
+    }
+  }
+}

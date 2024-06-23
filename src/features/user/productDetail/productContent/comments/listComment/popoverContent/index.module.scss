@@ -1,0 +1,37 @@
+.popover__main {
+  width: 200px;
+  padding: 8px 0;
+
+  :global {
+    .popover__list {
+      .popover__item {
+        padding: 10px 20px;
+        display: flex;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f0f0f0;
+            color: #292929;
+        }
+
+        span {
+          font-size: 16px;
+          color: black;
+          margin-right: 16px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.popover__customize {
+  :global {
+    .ant-popover-inner {
+      padding: 0;
+    }
+  }
+}

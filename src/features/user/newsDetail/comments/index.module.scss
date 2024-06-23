@@ -1,0 +1,28 @@
+.news__comment {
+  width: 100%;
+  padding: 24px;
+
+  :global {
+    .news__comment-title {
+      h3 {
+      }
+
+      p {
+        color: #666;
+        font-size: 14px;
+        font-style: italic;
+        line-height: 1.4;
+      }
+    }
+
+    .news__comment-content {
+      .input__content-field {
+        width: 100%;
+      }
+
+      .modal__comment-list {
+        width: 100%;
+      }
+    }
+  }
+}

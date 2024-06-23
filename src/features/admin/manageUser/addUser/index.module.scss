@@ -1,0 +1,19 @@
+.add__user {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    :global {
+        
+        .btn__add-user {
+            &:hover {
+
+                .ant-btn {
+                    background-color: #2f6ad9;
+                    box-shadow: 0 4px 11px rgba(55,125,255,.35)
+                }
+                
+            }
+        }
+    }
+}

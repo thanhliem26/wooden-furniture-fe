@@ -1,0 +1,31 @@
+.setting__static {
+  width: 100%;
+
+  :global {
+    .setting__static-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      gap: 5px;
+      margin-bottom: 50px;
+
+      span {
+        font-size: 20px;
+        margin-top: 4px;
+      }
+
+      h3 {
+        text-transform: uppercase;
+      }
+    }
+
+    .setting__static-form {
+      .button__footer {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+    }
+  }
+}

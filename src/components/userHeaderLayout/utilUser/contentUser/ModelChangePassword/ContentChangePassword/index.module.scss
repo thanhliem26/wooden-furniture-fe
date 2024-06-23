@@ -1,0 +1,26 @@
+.change__password {
+    width: 100%;
+    :global {
+  
+  
+      .button__footer {
+          display: flex;
+          justify-content: flex-end;
+  
+          .ant-form-item-control-input-content {
+            height: 100%;
+          }
+  
+          .btn__tab {
+            .ant-form-item-control {
+              margin: 0;
+            }
+          }
+  
+          .btn__submit {
+            margin-left: 10px;
+          }
+        }
+    }
+  }
+  

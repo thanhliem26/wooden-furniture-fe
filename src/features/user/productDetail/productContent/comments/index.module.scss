@@ -1,0 +1,35 @@
+.modal__comment {
+  width: 100%;
+
+  :global {
+    .modal__comment-title {
+      h3 {
+      }
+
+      p {
+        color: #666;
+        font-size: 14px;
+        font-style: italic;
+        line-height: 1.4;
+        margin: 13px 0;
+      }
+    }
+
+    .input__content-field {
+      width: 100%;
+    }
+
+    .modal__comment-list {
+      .main__comment {
+        width: 100%;
+        margin: 30px 0;
+
+        .main__comment-list {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}

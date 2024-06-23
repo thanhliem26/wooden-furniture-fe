@@ -1,0 +1,110 @@
+.news__list {
+  width: 100%;
+
+  :global {
+    .infinite-scroll-component {
+      overflow: inherit !important;
+    }
+    .news__list-item {
+      cursor: pointer;
+      box-shadow: 0 1px 3px -2px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.16),
+          0 3px 6px rgba(0, 0, 0, 0.23);
+
+        .news__item-description {
+          p {
+            color: #e2ba48 !important;
+          }
+        }
+      }
+
+      .news__item-image {
+        position: relative;
+
+        .news__image {
+          width: 100%;
+          height: 180px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .news__date {
+          position: absolute;
+          top: 7%;
+          display: table;
+          z-index: 20;
+          pointer-events: none;
+          height: 3.2em;
+          width: 3.2em;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          left: -10px;
+
+          .badge-inner {
+            background-color: white;
+            border: 2px solid black;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            line-height: 0.85;
+            font-weight: bolder;
+            padding: 2px;
+            white-space: nowrap;
+            transition: background-color 0.3s, color 0.3s, border 0.3s;
+            color: black;
+
+            &:hover {
+              background-color: black;
+              color: white;
+            }
+
+            .is-xsmall {
+              font-size: .7rem;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .news__item-content {
+        padding: 10px 17px 20px;
+
+        .item__content-name {
+          position: relative;
+          h5 {
+            line-height: 1.3;
+            margin-top: 0.1em;
+            margin-bottom: 0.3em;
+            color: #1c1c1c;
+            font-size: 1rem;
+            font-weight: 500;
+          }
+        }
+
+        .is__divider {
+          height: 2px;
+          display: block;
+          background-color: rgba(0, 0, 0, 0.1);
+          margin: 1em 0 1em;
+          width: 100%;
+          max-width: 30px;
+        }
+        .news__item-description {
+          p {
+            color: #777;
+          }
+        }
+      }
+    }
+  }
+}

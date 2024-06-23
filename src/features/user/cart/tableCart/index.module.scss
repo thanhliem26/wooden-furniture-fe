@@ -1,0 +1,115 @@
+.table__cart {
+  width: 100%;
+
+  :global {
+    .ant-table-thead {
+      .ant-table-cell {
+        background-color: white;
+
+        &::before {
+          width: 0 !important;
+        }
+      }
+    }
+
+    .ant-table-tbody {
+      .ant-table-row {
+        .ant-table-cell {
+          border-bottom: none;
+          height: 90px;
+
+          .span__price {
+            font-weight: bold;
+          }
+
+          .product__info {
+            display: flex;
+            gap: 20px;
+
+            .product__info-image {
+              width: 109px;
+              height: 90px;
+              max-width: 100%;
+
+              img {
+                width: 100%;
+              }
+            }
+
+            .product__info-content {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              gap: 20px;
+
+              .product__info-remove {
+                display: inline-block;
+                font-size: 0.7rem;
+                text-transform: uppercase;
+                text-decoration: underline;
+
+                span {
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+
+          .product__quantity {
+            display: flex;
+            gap: 10px;
+
+            button {
+              width: 25px;
+              background-color: white;
+              border: 1px solid;
+              border-radius: 2px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .btn__disabled {
+              background-color: #b8b3b3;
+              color: white;
+              cursor: not-allowed;
+            }
+          }
+        }
+
+        .ant-table-cell-row-hover {
+          background: none !important;
+        }
+      }
+    }
+
+    .ant-table-footer {
+      background: white;
+
+      .footer__cart {
+        .footer__cart-btn {
+          display: flex;
+          justify-content: flex-end;
+
+          button {
+            padding: 10px;
+            background-color: white;
+            color: #777;
+            border-color: #777;
+            border: 1px solid;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #3f5c58;
+              color: white;
+            }
+
+            &.not__allow {
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+    }
+  }
+}

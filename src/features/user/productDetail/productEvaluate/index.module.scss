@@ -1,0 +1,49 @@
+.main__evaluate {
+  width: 100%;
+
+  :global {
+    .ant-tabs-nav {
+      &::before {
+        border-bottom: 1px solid #e3e3e3;
+      }
+      .ant-tabs-nav-wrap {
+        .ant-tabs-nav-list {
+          gap: 5px;
+          .ant-tabs-tab {
+            background-color: #f5f5f5;
+            color: #858585;
+            border: 1px solid;
+            padding: 10px 15px;
+            font-weight: 600;
+            border-color: #dddddd;
+            margin: 0;
+
+            .ant-tabs-tab-btn {
+              text-transform: uppercase;
+
+              span {
+                .anticon {
+                  margin-right: 5px;
+                }
+              }
+            }
+          }
+
+          .ant-tabs-tab-active {
+            background-color: white;
+            border-top: 2px solid black;
+            border-bottom: none;
+
+            .ant-tabs-tab-btn {
+              color: black;
+            }
+          }
+
+          .ant-tabs-ink-bar {
+            background-color: white !important;
+          }
+        }
+      }
+    }
+  }
+}

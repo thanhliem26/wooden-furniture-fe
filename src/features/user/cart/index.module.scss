@@ -1,0 +1,100 @@
+.cart__main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  :global {
+    .cart__order {
+      width: 1400px;
+      max-width: 100%;
+    }
+
+    .cart__main-container {
+      width: 1400px;
+      max-width: 100%;
+      padding: 0 15px;
+    }
+
+    .cart__main-title {
+      margin-bottom: 2.5rem;
+
+      .main__title-link {
+        color: #777;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+
+        a {
+          text-decoration: none;
+        }
+
+        span {
+          margin: 0 20px;
+        }
+      }
+
+      .main__title-text {
+        font-size: 25px;
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+    }
+
+    .main__content-information {
+      .total__cart {
+        border: 1px solid;
+        padding: 30px;
+
+        .total__cart-title {
+          font-size: 1.4rem;
+          margin-bottom: 20px;
+        }
+
+        .total__cart-list {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .total__cart-item {
+            display: flex;
+            margin-bottom: 1px solid;
+            border-bottom: 1px solid;
+            padding-bottom: 20px;
+            border-color: #c3bebe;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .cart__item-text {
+              width: 30%;
+            }
+
+            .cart__item-price {
+              width: 70%;
+              font-weight: bold;
+            }
+          }
+        }
+
+        .total__cart-btn {
+            height: 70px;
+            background-color: #3f5c58;
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s ease-in-out;
+            cursor: pointer;
+            
+            &:hover {
+                background-color: #212121;
+            }
+        }
+      }
+    }
+  }
+}

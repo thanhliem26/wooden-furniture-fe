@@ -1,0 +1,163 @@
+.comment__list-item {
+
+    :global {
+        .comment__item-context {
+            display: flex;
+            gap: 20px;
+      
+            .comment__item-image {
+              width: 38px;
+              height: 38px;
+              min-width: 38px;
+              min-height: 38px;
+              border-radius: 50%;
+              overflow: hidden;
+              img {
+                width: 100%;
+              }
+            }
+      
+            .comment__item-content {
+              width: 100%;
+              &:hover {
+                .icon__dot {
+                  opacity: 1 !important;
+                }
+              }
+              .item__content-field {
+                background-color: #f2f3f5;
+                border-radius: 18px;
+                color: #1c1e21;
+                padding: 9px 12px;
+                position: relative;
+                max-width: 500px;
+                min-width: 400px;
+                width: fit-content;
+      
+                .item__content-name {
+                  span {
+                    color: black;
+                    display: inline-block;
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin: 0;
+                  }
+                }
+      
+                .item__content-text {
+                  margin: 5px 0;
+      
+                  p {
+                    margin: 6px 0;
+                  }
+                }
+              }
+      
+              .main__comment-reply {
+                .comment__reply-action {
+                  display: flex;
+                  margin-top: 5px;
+      
+                  .main__comment-like {
+                    button {
+                      background-color: transparent;
+                      border: none;
+                      outline: none;
+                      text-align: center;
+                      padding: 0;
+                      cursor: pointer;
+      
+                      span {
+                        color: #e87a5a;
+                        font-size: 13px;
+                        margin: 0 4px;
+                      }
+                    }
+                  }
+      
+                  .main__comment-createdAt {
+                    display: flex;
+                    align-items: normal;
+                    span {
+                      color: #999;
+                      font-size: 13px;
+                      margin: 0 4px;
+                      display: flex;
+      
+                      .dot {
+                        color: black;
+                        margin: 0 2px;
+                      }
+                    }
+      
+                    .icon__dot {
+                      height: 100%;
+                      font-size: 12px;
+                      color: #999;
+                      display: flex;
+                      cursor: pointer;
+                      opacity: 0;
+                      transition: all 0.3s ease-in-out;
+                    }
+                  }
+                }
+      
+                .comment__reply-update {
+                  .reply__update-input {
+                    .update__input-field {
+                      width: 100%;
+      
+                      .comment__input-user {
+                        width: 27px;
+                        height: 27px;
+                      }
+                    }
+                  }
+                }
+              }
+             
+              .main__comment-children {
+                margin-top: 5px;
+                .comment__children-title {
+                  p {
+                    color: #666;
+                    font-size: 14px;
+                    cursor: pointer;
+                    font-weight: 600;
+                  }
+
+                  span {
+                    color: #666;
+                    font-size: 14px;
+                    cursor: pointer;
+                    font-weight: 600;
+                  }
+                }
+      
+                .comment__children-list {
+                  
+                }
+              }
+            }
+          }
+
+          @media screen and (max-width: 739px) {
+           
+                  .comment__item-context{
+                    .comment__item-image {
+                      img {
+                      }
+                    }
+      
+                    .comment__item-content {
+                      .item__content-field {
+                        width: calc(100vh - 120px) !important;
+                        min-width: auto !important;
+                      }
+                    }
+                  }
+              
+          }
+    }
+   
+  }

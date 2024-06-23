@@ -1,0 +1,74 @@
+.modal__contact {
+  width: 100%;
+
+  :global {
+    .ant-tabs-nav {
+      margin: 30px 0;
+
+      .ant-tabs-nav-wrap {
+        border-radius: 0.5rem;
+        overflow: hidden;
+
+        .ant-tabs-nav-list {
+          width: 100%;
+          background-color: #f8fafd;
+
+          .ant-tabs-tab {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .ant-tabs-tab-btn {
+              padding: 10px 0;
+              color: #677788;
+
+              &:hover {
+                color: #377dff;
+              }
+            }
+          }
+
+          .ant-tabs-tab-active {
+            padding: 0;
+
+            .ant-tabs-tab-btn {
+              width: 95%;
+              height: 80%;
+              background-color: white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 0.5rem;
+              box-shadow: 0 0.1875rem 0.375rem 0 rgba(140, 152, 164, 0.25);
+            }
+          }
+        }
+      }
+    }
+
+    .change__field-contact {
+      width: 100%;
+      :global {
+        .button__footer {
+          display: flex;
+          justify-content: flex-end;
+
+          .ant-form-item-control-input-content {
+            height: 100%;
+          }
+
+          .btn__tab {
+            .ant-form-item-control {
+              margin: 0;
+            }
+          }
+
+          .btn__submit {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}

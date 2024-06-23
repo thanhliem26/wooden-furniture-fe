@@ -1,0 +1,13 @@
+.news__detail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  :global {
+    .news__detail-container {
+      width: 1430px;
+      max-width: 100%;
+    }
+  }
+}

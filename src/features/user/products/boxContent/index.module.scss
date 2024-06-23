@@ -1,0 +1,40 @@
+.filter__box-list {
+    border: 1px solid #cbc5c5;
+    padding: 24px;
+
+    :global {
+      .filter__box-title {
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        span {
+          font-size: 12px;
+          color: #777;
+          cursor: pointer;
+        }
+  
+        h4 {
+          font-size: 16px;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+  
+       
+      }
+
+      .filter__box-container {
+        width: 100%;
+        padding: 0 5px;
+        height: auto;
+        max-height: 1000px;
+        overflow: hidden;
+        transition: max-height .5s ease-in-out;
+
+        &.closed {
+          max-height: 0;
+        }
+      }
+    }
+  }

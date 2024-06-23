@@ -1,0 +1,109 @@
+.upload__component {
+  width: 100%;
+  // height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  :global {
+    .upload__self {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .upload__root-class {
+        height: 0;
+        overflow: hidden;
+        display: block;
+      }
+    }
+
+    .image__list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+
+      .item__image {
+        // width: 100%;
+        height: 250px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        border-color: #d0c7c7;
+
+        .btn__image {
+          width: 90%;
+          height: 35%;
+          background-color: rgb(208 199 199 / 30%);
+          border: none;
+          border-radius: 10px;
+
+          label {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+              margin: 0 5px;
+            }
+          }
+        }
+
+        &:hover {
+          .image__contain {
+            .action__image {
+              span {
+                display: block;
+              }
+            }
+          }
+        }
+
+        .image__contain {
+          height: 90%;
+          width: 90%;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+
+          .action__image {
+            position: absolute;
+            inset: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            display: flex;
+            color: white;
+            justify-content: space-around;
+            align-items: center;
+
+            span {
+              font-size: 20px;
+              display: none;
+            }
+          }
+
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    .upload-area {
+      width: 100%;
+
+      .ant-upload-list {
+        display: none;
+      }
+    }
+  }
+}

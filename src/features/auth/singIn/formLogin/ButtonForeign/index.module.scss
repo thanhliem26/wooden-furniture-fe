@@ -1,0 +1,46 @@
+.btn__foreign {
+  width: 100;
+  display: flex;
+  gap: 10px;
+
+  :global {
+    .btn__facebook {
+      flex: 1;
+      button {
+        width: 100%;
+      }
+    }
+
+    .btn__google {
+      flex: 1;
+      button {
+        width: 100%;
+      }
+    }
+
+    .btn {
+       button {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, .26);
+        border-radius: 2px;
+        box-sizing: border-box;
+        color: rgba(0, 0, 0, .87);
+        font-size: .875rem;
+        height: 40px;
+        outline: none;
+        padding: 0 2px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background-color: #fafafa;
+        }
+       }
+    }
+  }
+}

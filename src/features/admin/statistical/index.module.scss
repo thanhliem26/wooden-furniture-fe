@@ -1,0 +1,53 @@
+.statistical__main {
+  width: 100%;
+
+  :global {
+    .statistical__container {
+      .statistical__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        gap: 5px;
+        margin-bottom: 50px;
+
+        h3 {
+          text-transform: uppercase;
+        }
+      }
+
+      .statistical__content {
+        .statistical__content-date {
+          .select_date {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .content__date-title {
+                span {
+                    text-transform: capitalize;
+                    font-size: 1rem;
+                    font-weight: 500;
+                
+                }
+            }
+
+            .content__date-select {
+            }
+          }
+        }
+
+        .statistical__content-chart {
+            .area__chart {
+                height: 300px;
+                margin-top: 30px;
+            }
+
+            .radar__chart {
+              height: 300px;
+              margin-top: 30px;
+            }
+        }
+      }
+    }
+  }
+}

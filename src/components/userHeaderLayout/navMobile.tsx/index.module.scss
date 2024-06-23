@@ -1,0 +1,96 @@
+.nav__user {
+  :global {
+  }
+}
+
+.nav__user-mobile {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+
+  :global {
+    .user__background {
+      position: absolute;
+      inset: 0;
+      background: #0b0b0b;
+      opacity: 0.6;
+    }
+    .user__mobile {
+      width: 260px;
+      max-width: 100%;
+      min-height: 100vh;
+      background-color: #f7f7f7;
+      position: relative;
+
+      .user__mobile-nav {
+        padding: 50px 0;
+        .mobile__nav-search {
+          display: flex;
+          justify-content: center;
+
+          .util__search-input {
+            width: 80%;
+            position: relative;
+            height: 32px;
+
+            input {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              inset: 0;
+              padding: 0 10px;
+              font-size: 14px;
+              background-color: rgba(0, 0, 0, 0.03);
+              box-shadow: none;
+              border-color: rgba(0, 0, 0, 0.09);
+              background-position: 99% 50%;
+              color: currentColor !important;
+              border-radius: 99px;
+              outline: none;
+            }
+
+            .anticon-search {
+              position: absolute;
+              right: 15px;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+        }
+
+        .mobile__nav-menu {
+          padding: 20px 0;
+          .nav__menu-item {
+            font-size: 14px;
+            padding: 15px 0 15px 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            border-top: 1px solid #e7dede;
+
+            a {
+              text-decoration: none;
+              color: rgba(102,102,102,0.85);
+            }
+
+            .anticon-shopping-cart {
+              font-size: 16px;
+            }
+        }
+        }
+      }
+    }
+
+    .remove__background {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+      color: #dcdada;
+      font-size: 20px;
+      button {
+
+      }
+    }
+  }
+}

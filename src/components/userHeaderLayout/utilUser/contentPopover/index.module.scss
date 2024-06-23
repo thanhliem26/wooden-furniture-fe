@@ -1,0 +1,169 @@
+.content__popover {
+  width: 230px;
+  max-width: 100%;
+  :global {
+    .content__popover-list {
+      max-height: 300px;
+      ;
+
+      &.overFlow_scroll {
+        overflow-y: scroll
+      }
+
+      .content__popover-item {
+        display: flex;
+        border-bottom: 1px solid #e3dbdb;
+        margin: 10px 0;
+
+        .popover__item-image {
+          width: 60px;
+          height: 60px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .popover__item-text {
+          margin: 0 10px;
+          flex: 1;
+
+          .item__text-name {
+
+           
+
+            a {
+              margin-bottom: 5px;
+              padding: 0;
+              text-overflow: ellipsis;
+              line-height: 1.3;
+              font-size: 1rem;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              color: black;
+              &:hover {
+                color: #e2ba48;
+                cursor: pointer;
+              }
+            }
+
+           
+          }
+
+          .item__text-price {
+            display: block;
+            margin-top: 3px;
+            font-size: 0.85em;
+            opacity: 0.6;
+
+            span {
+              white-space: nowrap;
+              color: #111;
+              font-weight: bold;
+            }
+          }
+        }
+
+        .popover__item-delete {
+          .item__delete {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            cursor: pointer;
+
+            &:hover {
+              color: black;
+              border-color: black;
+            }
+          }
+        }
+      }
+    }
+
+    .content__popover-quantity {
+      .popover__item-text {
+        margin: 10px;
+        flex: 1;
+
+        .item__text-quantity {
+          margin-top: 0;
+          text-align: center;
+          font-size: 16px;
+
+          strong {
+            color: #777;
+          }
+
+          span {
+            white-space: nowrap;
+            color: #111;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .content__popover-action {
+      .btn__tab {
+        margin: 0;
+      }
+
+      .popover__action {
+        button {
+          width: 100%;
+          color: white;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 16px;
+          padding: 6px 5px;
+          cursor: pointer;
+          font-weight: bold;
+          margin-bottom: 10px;
+          color: white;
+          height: 100%;
+          border-radius: 0;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+
+      .popover__action-see {
+        button {
+          background-color: black;
+
+          &:hover {
+            background-color: black !important;
+            opacity: 0.8;
+          }
+        }
+      }
+
+      .popover__action-pay {
+        button {
+          background-color: #d09f11;
+
+          &:hover {
+            background-color: #d09f11 !important;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+
+    .content__popover-empty {
+      color: #777;
+      font-size: 1rem;
+    }
+  }
+}
