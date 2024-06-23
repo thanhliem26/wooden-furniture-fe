@@ -4,23 +4,13 @@ import styled from "./index.module.scss";
 import getBase64 from "@/utils/file";
 
 interface TinyProps extends IAllProps {
-  label?: string;
   initProps?: object;
-  defaultValue?: string;
-  callbackChange?: (value: string) => void;
-  required?: boolean;
   value: string;
-  loading?: boolean;
 }
 
 export default function EditorBox({
-  label = "",
   initProps,
-  defaultValue,
-  callbackChange,
-  required = false,
   value,
-  loading,
   ...props
 }: TinyProps) {
   const editorRef = useRef(null);
