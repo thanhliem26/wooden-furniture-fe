@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: '14'
 
       - name: Install dependencies
         run: npm install
@@ -48,7 +48,7 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > private_key
           chmod 600 private_key
           rsync -avz -e "ssh -o StrictHostKeyChecking=no -i private_key" ./build/ ubuntu@$EC2_IP_ADDRESS:/var/www/wooden-furniture/dist
-          ssh -o StrictHostKeyChecking=no -i private_key ubuntu@$EC2_IP_ADDRESS 'bash -s' <<'EOF'
-            cd /var/www/wooden-furniture/dist
+          ssh -o StrictHostKeyChecking=no -i private_key ubuntu@$EC2_IP_ADDRESS "
+            cd /var/www/wooden-furniture/dist &&
             sudo service nginx restart  # hoặc apache2, tùy vào web server bạn dùng
-EOF
+          "
