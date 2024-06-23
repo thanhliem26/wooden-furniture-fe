@@ -1,0 +1,55 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - product
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set environment variables
+        run: |
+          echo "NODE_ENV=${{ secrets.NODE_ENV }}" >> $GITHUB_ENV
+          echo "PORT=${{ secrets.PORT }}" >> $GITHUB_ENV
+          echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> $GITHUB_ENV
+          echo "VITE_API_URL_WS=${{ secrets.VITE_API_URL_WS }}" >> $GITHUB_ENV
+          echo "VITE_API_REFRESH_TOKEN=${{ secrets.VITE_API_REFRESH_TOKEN }}" >> $GITHUB_ENV
+          echo "TINY_API_KEY=${{ secrets.TINY_API_KEY }}" >> $GITHUB_ENV
+          echo "VITE_API_KEY_FIREBASE=${{ secrets.VITE_API_KEY_FIREBASE }}" >> $GITHUB_ENV
+          echo "VITE_AUTH_DOMAIN_FIREBASE=${{ secrets.VITE_AUTH_DOMAIN_FIREBASE }}" >> $GITHUB_ENV
+          echo "VITE_PROJECT_ID_FIREBASE=${{ secrets.VITE_PROJECT_ID_FIREBASE }}" >> $GITHUB_ENV
+          echo "VITE_STORAGE_BUCKET_FIREBASE=${{ secrets.VITE_STORAGE_BUCKET_FIREBASE }}" >> $GITHUB_ENV
+          echo "VITE_MESSAGING_SENDER_ID_FIREBASE=${{ secrets.VITE_MESSAGING_SENDER_ID_FIREBASE }}" >> $GITHUB_ENV
+          echo "VITE_APP_ID_FIREBASE=${{ secrets.VITE_APP_ID_FIREBASE }}" >> $GITHUB_ENV
+          echo "VITE_MEASUREMENT_ID=${{ secrets.VITE_MEASUREMENT_ID }}" >> $GITHUB_ENV
+
+      - name: Build the application
+        run: npm run build
+
+      - name: Deploy to EC2
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          EC2_IP_ADDRESS: ${{ secrets.EC2_IP_ADDRESS }}
+        run: |
+          echo "$SSH_PRIVATE_KEY" > private_key
+          chmod 600 private_key
+          rsync -avz -e "ssh -o StrictHostKeyChecking=no -i private_key" ./build/ ubuntu@$EC2_IP_ADDRESS:/var/www/wooden-furniture/dist
+          ssh -o StrictHostKeyChecking=no -i private_key ubuntu@$EC2_IP_ADDRESS 'bash -s' << 'EOF'
+            # Các lệnh trên máy chủ EC2
+            cd /var/www/wooden-furniture/dist
+            sudo service nginx restart  # hoặc apache2, tùy vào web server bạn dùng
+EOF
