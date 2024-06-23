@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - product
+      - production
 
 jobs:
   build-and-deploy:
