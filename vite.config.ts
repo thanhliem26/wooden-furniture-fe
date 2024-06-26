@@ -22,6 +22,7 @@ export default defineConfig(({ command, mode }) => {
         "@/utils": path.resolve(__dirname, "./src/utils"),
         "@/routers": path.resolve(__dirname, "./src/routers"),
         "@/hoc": path.resolve(__dirname, "./src/hoc"),
+        "@/pages": path.resolve(__dirname, "./src/pages"),
       },
       dedupe: ['react', 'react-dom'],
     },
