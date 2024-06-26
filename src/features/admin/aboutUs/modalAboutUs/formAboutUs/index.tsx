@@ -20,7 +20,6 @@ import { useAppSelector } from "@/store/index";
 import UploadComponent from "@/components/form/uploadComponent";
 import lodash from 'lodash';
 import { handleMultiPrevImageS3 } from "@/components/modal/modalChangeInfoUser/content/constant";
-import MarkdownProduct from "../markdown";
 import markDownApi from "@/api/markdown";
 import EditorBox from "@/components/form/tinyComponent";
 
@@ -36,9 +35,6 @@ const FormAboutUs = ({ isEdit }: Props) => {
 
   const [imageDefault, setImageDefault] = useState([]);
   const [logoDefault, setLogoDefault] = useState([]);
-  const [markdown, setMarkDown] = useState({html: '', text: ''});
-  const [showMarkDown, setShowMarkdown] = useState(false)
-
   const [editor, setEditor] = useState<string>('');
 
   const {
@@ -66,7 +62,6 @@ const FormAboutUs = ({ isEdit }: Props) => {
     try {
       setLoading(true);
       const dataValue = lodash.cloneDeep(data);
-      const dataMarkdown = lodash.cloneDeep(markdown);
       const { image, logo } = dataValue;
 
       const imagesUpload = !lodash.isEmpty(image)
@@ -100,17 +95,10 @@ const FormAboutUs = ({ isEdit }: Props) => {
       setLoading(false);
     }
   };
-
-  const handleEditorChange = ({ html, text }) => {
-    setMarkDown({html, text});
-  }
-
   
   const handleEditorTiny = (value) => {
     setEditor(value)
   }
-
-  const debounceEditor = lodash.debounce(handleEditorChange, 300);
 
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
@@ -126,10 +114,6 @@ const FormAboutUs = ({ isEdit }: Props) => {
 
     const logo = isJson(aboutUsSelected?.logo) ? JSON.parse(aboutUsSelected?.logo) : [];
     setLogoDefault(logo);
-
-    // handleEditorChange({html: aboutUsSelected?.contentHTML || '', text: aboutUsSelected?.contentMarkdown || ''})
-    
-    // setShowMarkdown(true)
     handleEditorTiny(aboutUsSelected?.contentHTML || '')
   }, [aboutUsSelected])
 

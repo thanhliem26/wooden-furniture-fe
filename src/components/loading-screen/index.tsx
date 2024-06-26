@@ -1,5 +1,5 @@
 import NProgress from "nprogress";
-import React, { FC, Fragment, useEffect } from "react";
+import { FC, Fragment, useEffect } from "react";
 
 const LoadingScreen: FC = () => {
   NProgress.configure({ showSpinner: false });
