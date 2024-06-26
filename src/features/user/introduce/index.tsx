@@ -2,9 +2,9 @@ import styled from "./index.module.scss";
 import Image from "@/constants/images";
 import { useAppSelector } from "@/store/index";
 import { isJson } from "@/utils/index";
+import { renderDescription } from "@/utils/renderText";
 import { Col, Row } from "antd";
 import { useMemo } from "react";
-import Markdown from "react-markdown";
 
 const Introduce = () => {
   const activeAbout = useAppSelector((state) => state.aboutUs.aboutUsSelected);
@@ -92,7 +92,7 @@ const Introduce = () => {
         </Row>
       </div>
       <div className="introduce__main-markdown">
-        <Markdown children={activeAbout?.contentMarkdown} />
+        {renderDescription(activeAbout?.contentMarkdown)}
       </div>
     </div>
   );

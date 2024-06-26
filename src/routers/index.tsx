@@ -1,35 +1,44 @@
 import PublicLayout from '@/layouts/PublicLayout';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import SingInPage from '@/features/auth/singIn';
-import SingUpPage from '@/features/auth/singUp';
 import AdminLayout from '@/layouts/AdminLayout';
-
 import PublicLayoutUser from '@/layouts/PublicLayoutUser';
-import MainPage from '@/features/user/main';
-
 import NotFound from '@/features/misc/NotFound';
 import Admin from '@/features/admin';
-import Introduce from '@/features/user/introduce';
 import Forbidden from '@/features/misc/Forbidden';
 import ManageUsers from '@/features/admin/manageUser';
 import ManageCategory from '@/features/admin/manageCategory';
 import ManageProduct from '@/features/admin/manageProducts';
 import SettingStatic from '@/features/admin/settingStatic';
-import CartOrder from '@/features/user/cart';
-import Products from '@/features/user/products';
-import ProductDetail from '@/features/user/productDetail';
 import ManageNews from '@/features/admin/manageNews';
-import News from '@/features/user/news';
-import NewsDetail from '@/features/user/newsDetail';
 import Verify from '@/features/misc/Verify';
 import ActiveUser from '@/features/misc/ActiveUser';
-import Contact from '@/features/user/contact';
 import ManageContact from '@/features/admin/manageContact';
-import PayComponent from '@/features/user/pay';
 import ManageOrder from '@/features/admin/manageOrder';
 import AboutUS from '@/features/admin/aboutUs';
-import Purchase from '@/features/user/purchase';
 import Statistical from '@/features/admin/statistical';
+import { FC, lazy, LazyExoticComponent, Suspense } from 'react';
+import LoadingScreen from '@/components/loading-screen';
+
+const Loadable = (Component: LazyExoticComponent<FC>) => (props: any) => {
+  return (
+    <Suspense fallback={<LoadingScreen />}>
+      <Component {...props} />
+    </Suspense>
+  )
+}
+
+const HomePage = Loadable(lazy(() => import('@/pages/home')))
+const IntroducePage = Loadable(lazy(() => import('@/pages/introduce')))
+const CartPage = Loadable(lazy(() => import('@/pages/cart-order')))
+const ProductPage = Loadable(lazy(() => import('@/pages/products')))
+const ProductDetailPage = Loadable(lazy(() => import('@/pages/product-detail')))
+const NewPage = Loadable(lazy(() => import('@/pages/news')))
+const NewsDetailPage = Loadable(lazy(() => import('@/pages/news-detail')))
+const ContactPage = Loadable(lazy(() => import('@/pages/contact')))
+const PayPage = Loadable(lazy(() => import('@/pages/pay-component')))
+const PurchasePage = Loadable(lazy(() => import('@/pages/purchase')))
+const SignInPage = Loadable(lazy(() => import('@/pages/sign-in-page')))
+const SignUpPage = Loadable(lazy(() => import('@/pages/sign-up-page')))
 
 function RouterComponent() {
   const router = createBrowserRouter([
@@ -39,43 +48,43 @@ function RouterComponent() {
       children: [
         {
           index: true,
-          element: <MainPage />
+          element: <HomePage />
         },
         {
           path: '/introduce',
-          element: <Introduce />
+          element: <IntroducePage />
         },
         {
           path: '/cart',
-          element: <CartOrder />
+          element: <CartPage />
         },
         {
           path: '/product',
-          element: <Products />
+          element: <ProductPage />
         },
         {
           path: '/product/:id',
-          element: <ProductDetail />
+          element: <ProductDetailPage />
         },
         {
           path: '/news',
-          element: <News />
+          element: <NewPage />
         },
         {
           path: '/news/:id',
-          element: <NewsDetail />
+          element: <NewsDetailPage />
         },
         {
           path: '/contact',
-          element: <Contact />
+          element: <ContactPage />
         },
         {
           path: "/pay",
-          element: <PayComponent />
+          element: <PayPage />
         },
         {
           path: "/purchase",
-          element: <Purchase />
+          element: <PurchasePage />
         },
       ]
     },
@@ -85,11 +94,11 @@ function RouterComponent() {
       children: [
         {
           index: true,
-          element: <SingInPage />
+          element: <SignInPage />
         },
         {
           path: "sing-up",
-          element: <SingUpPage />,
+          element: <SignUpPage />,
         },
       ]
     },
