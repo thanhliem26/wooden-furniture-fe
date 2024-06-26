@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from "ax
 import * as authUtil from '@/utils/index';
 import Notification from "@/components/notificationSend";
 import { HEADER } from '@/constants/index';
-import authApi from "./auth";
+import { handleRefreshToken } from "@/utils/auth";
 // Set up default config for http requests here
 
 const axiosService = axios.create({
@@ -53,24 +53,7 @@ axiosService.interceptors.response.use(
 			case 401:
 				if (errorData?.['message'] === 'jwt expired') {
 					const refreshToken = authUtil.getRefreshToken();
-
-					if (refreshToken) {
-						const { metadata } = await authApi.reFreshToken(refreshToken);
-
-						const { user, tokens } = metadata;
-
-						authUtil.setUser(user)
-						authUtil.setToken(tokens.accessToken)
-						authUtil.setRefreshToken(tokens.refreshToken)
-						setHeader(HEADER.AUTHORIZATION, tokens.accessToken)
-						window.location.reload();
-					} else {
-						removeHeader(HEADER.AUTHORIZATION);
-						authUtil.removeToken()
-						authUtil.removeUser()
-						authUtil.removeRefreshToken();
-						window.location.href = "/login";
-					}
+					handleRefreshToken(refreshToken)
 				}
 
 				return errorData;
@@ -89,6 +72,10 @@ axiosService.interceptors.response.use(
 				break;
 			case 500: {
 				const url = error.config?.url;
+				if(errorData?.['message'] === 'invalid token') {
+					const refreshToken = authUtil.getRefreshToken();
+					handleRefreshToken(refreshToken)
+				}
 
 				if (url === import.meta.env.VITE_API_REFRESH_TOKEN) {
 					removeHeader(HEADER.AUTHORIZATION);

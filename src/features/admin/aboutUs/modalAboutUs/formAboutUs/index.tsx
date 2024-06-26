@@ -22,6 +22,7 @@ import lodash from 'lodash';
 import { handleMultiPrevImageS3 } from "@/components/modal/modalChangeInfoUser/content/constant";
 import MarkdownProduct from "../markdown";
 import markDownApi from "@/api/markdown";
+import EditorBox from "@/components/form/tinyComponent";
 
 interface Props {
   isEdit: boolean;
@@ -37,6 +38,8 @@ const FormAboutUs = ({ isEdit }: Props) => {
   const [logoDefault, setLogoDefault] = useState([]);
   const [markdown, setMarkDown] = useState({html: '', text: ''});
   const [showMarkDown, setShowMarkdown] = useState(false)
+
+  const [editor, setEditor] = useState<string>('');
 
   const {
     handleSubmit,
@@ -77,15 +80,15 @@ const FormAboutUs = ({ isEdit }: Props) => {
       dataValue.logo = typeof imagesUploadLogo === 'string' ? imagesUploadLogo : JSON.stringify(imagesUploadLogo);
 
       const { metadata } = await markDownApi.createMarkdown({
-        contentHTML: dataMarkdown.html, 
-        contentMarkdown: dataMarkdown.text,
+        contentHTML: editor, 
+        contentMarkdown: editor,
         id: isEdit && aboutUsSelected?.markdown_id ? aboutUsSelected?.markdown_id : null,
       })
 
       const { id } = metadata;
       dataValue.markdown_id = id;
-      dataValue.contentHTML = dataMarkdown.html;
-      dataValue.contentMarkdown = dataMarkdown.text;
+      dataValue.contentHTML = editor;
+      dataValue.contentMarkdown = editor;
       
       isEdit
         ? handleSubmitEdit(dataValue, dispatch, eventEmitter)
@@ -100,6 +103,11 @@ const FormAboutUs = ({ isEdit }: Props) => {
 
   const handleEditorChange = ({ html, text }) => {
     setMarkDown({html, text});
+  }
+
+  
+  const handleEditorTiny = (value) => {
+    setEditor(value)
   }
 
   const debounceEditor = lodash.debounce(handleEditorChange, 300);
@@ -119,9 +127,10 @@ const FormAboutUs = ({ isEdit }: Props) => {
     const logo = isJson(aboutUsSelected?.logo) ? JSON.parse(aboutUsSelected?.logo) : [];
     setLogoDefault(logo);
 
-    handleEditorChange({html: aboutUsSelected?.contentHTML || '', text: aboutUsSelected?.contentMarkdown || ''})
+    // handleEditorChange({html: aboutUsSelected?.contentHTML || '', text: aboutUsSelected?.contentMarkdown || ''})
     
-    setShowMarkdown(true)
+    // setShowMarkdown(true)
+    handleEditorTiny(aboutUsSelected?.contentHTML || '')
   }, [aboutUsSelected])
 
   return (
@@ -234,8 +243,12 @@ const FormAboutUs = ({ isEdit }: Props) => {
             Markdown
           </Col>
           <Col md={24} span={24}>
-           <MarkdownProduct showMarkDown={showMarkDown} handleEditorChange={debounceEditor} markdown={markdown}/>
-           
+           {/* <MarkdownProduct showMarkDown={showMarkDown} handleEditorChange={debounceEditor} markdown={markdown}/> */}
+           <EditorBox
+            value={editor}
+            onEditorChange={(value) => {
+              setEditor(value);
+            }}/>
           </Col>
         </Row>
         <div className="button__footer">
