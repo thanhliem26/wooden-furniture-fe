@@ -4,7 +4,7 @@ import News from '@/features/user/news';
 function NewsPage() {
 
   return (
-    <HelmetComponent title="[do go thanh lanh] news">
+    <HelmetComponent title="[Đồ gỗ Thành Lành] News">
       <News />
     </HelmetComponent>
   )

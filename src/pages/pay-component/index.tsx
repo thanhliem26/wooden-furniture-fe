@@ -4,7 +4,7 @@ import Pay from '@/features/user/pay';
 function PayPage() {
 
   return (
-    <HelmetComponent title="[do go thanh lanh] pay">
+    <HelmetComponent title="[Đồ gỗ Thành Lành] Payment">
       <Pay />
     </HelmetComponent>
   )

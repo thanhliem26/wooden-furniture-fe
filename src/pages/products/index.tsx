@@ -4,7 +4,7 @@ import Product from '@/features/user/products';
 function ProductsPage() {
 
   return (
-    <HelmetComponent title="[do go thanh lanh] product">
+    <HelmetComponent title="[Đồ gỗ Thành Lành] Product">
       <Product />
     </HelmetComponent>
   )

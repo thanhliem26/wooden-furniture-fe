@@ -4,7 +4,7 @@ import Purchase from '@/features/user/purchase';
 function PurchasePage() {
 
   return (
-    <HelmetComponent title="[do go thanh lanh] purchase">
+    <HelmetComponent title="[Đồ gỗ Thành Lành] Purchase">
       <Purchase />
     </HelmetComponent>
   )
