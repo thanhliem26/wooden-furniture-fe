@@ -4,7 +4,7 @@ import MainPage from '@/features/user/main';
 function HomePage() {
 
   return (
-    <HelmetComponent title="[TREC] do go thanh lanh">
+    <HelmetComponent title="[Đồ gỗ Thành Lành] Home">
       <MainPage />
     </HelmetComponent>
   )
