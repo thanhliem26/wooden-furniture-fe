@@ -4,7 +4,7 @@ import Contact from '@/features/user/contact';
 function ContactPage() {
 
   return (
-    <HelmetComponent title="[do go thanh lanh] contact">
+    <HelmetComponent title="[Đồ gỗ Thành Lành] Contact">
       <Contact />
     </HelmetComponent>
   )
