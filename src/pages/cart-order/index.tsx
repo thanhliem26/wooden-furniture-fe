@@ -4,7 +4,7 @@ import Cart from '@/features/user/cart';
 function CartPage() {
 
   return (
-    <HelmetComponent title="[Đồ gỗ Thành Lành] Cart">
+    <HelmetComponent title="Đồ gỗ Thành Lành">
       <Cart />
     </HelmetComponent>
   )
