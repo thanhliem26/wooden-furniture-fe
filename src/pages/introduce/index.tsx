@@ -4,7 +4,7 @@ import Introduce from '@/features/user/introduce';
 function IntroducePage() {
 
   return (
-    <HelmetComponent title="[Đồ gỗ Thành Lành] Introduce">
+    <HelmetComponent title="Đồ gỗ Thành Lành Giới thiệu">
       <Introduce />
     </HelmetComponent>
   )

@@ -4,7 +4,7 @@ import SignUp from '@/features/auth/singUp';
 function SignUpPage() {
 
   return (
-    <HelmetComponent title="[do go thanh lanh] sign up">
+    <HelmetComponent title="sign up">
       <SignUp />
     </HelmetComponent>
   )
