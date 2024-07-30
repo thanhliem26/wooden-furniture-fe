@@ -4,7 +4,7 @@ import SingIn from '@/features/auth/singIn';
 function SignInPage() {
 
   return (
-    <HelmetComponent title="[do go thanh lanh] sign in">
+    <HelmetComponent title="sign in">
       <SingIn />
     </HelmetComponent>
   )
