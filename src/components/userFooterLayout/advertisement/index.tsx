@@ -15,14 +15,19 @@ const Advertisement = () => {
 
   return (
     <div className="advertisement layout__footer-contain">
-        <div className="util__logo">
-          <Link to="/">
-            <img width="200" height="100" src={logo} alt="noithatbanghe" />
-          </Link>
-        </div>
-        <div className="advertisement__content">
-            <p>Reveal yourself through your choice</p>
-        </div>
+      <div className="util__logo">
+        <Link to="/">
+          <img width="200" height="100" src={logo} alt="noithatbanghe" />
+        </Link>
+      </div>
+      <div className="advertisement__content">
+        <h1 >
+          Đồ Gỗ Thành Lành cơ sở chuyên sản xuất và cung cấp sản phẩm đồ gỗ mỹ
+          nghệ cao cấp tại Nam Định. Đồ Gỗ Thành Lành có nhiều mẫu đồ gỗ đẹp cao
+          cấp được làm bởi những nghệ nhân và kỹ sư dày dặn kinh nghiệm, tâm
+          huyết với nghề.
+        </h1>
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ const AboutMe = () => {
   return (
     <div className="aboutMe layout__footer-contain">
       <div className="aboutMe__title">
-        <h3>Thông tin liên hệ</h3>
+        <span>Thông tin liên hệ</span>
       </div>
       <div className="aboutMe__content">
         <div className="aboutMe__content-field">

@@ -187,7 +187,7 @@ const ProductContent = ({ product }: Props) => {
               <div className="item__info-description">
                 <p>{product?.description}</p>
               </div>
-              <div className="item__info-order">
+              <div className="item__info-order" >
                 <div className="btn__order">
                   <button
                     className={quantity <= 1 ? "btn__disabled" : ""}
