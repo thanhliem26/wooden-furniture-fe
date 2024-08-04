@@ -16,10 +16,12 @@ import {
   updateComment,
 } from "@/store/comments";
 import TEXT_COMMON from "@/constants/text";
+import HelmetProduct from "@/components/helmet/helmet-product";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState<ProductState | null>(null);
+  console.log("🚀 ~ product:", product);
   const is_call = useAppSelector(
     (state: RootState) => state.comments.is_call_api
   );
@@ -66,13 +68,13 @@ const ProductDetail = () => {
       console.log("Disconnected from WebSocket server");
 
       timeOutWs.current = setInterval(() => {
-        if(ws.current.readyState === STATUS_WS.CLOSED) {
-          console.log("re-connect websocket")
+        if (ws.current.readyState === STATUS_WS.CLOSED) {
+          console.log("re-connect websocket");
           ws.current = new WebSocket(wsUrl);
         } else {
           clearInterval(timeOutWs.current);
         }
-      }, 5000)
+      }, 5000);
     };
 
     const handleBeforeUnload = () => {
@@ -90,8 +92,8 @@ const ProductDetail = () => {
         handleBeforeUnload();
       }
 
-      if(timeOutWs.current) {
-        clearInterval(timeOutWs.current)
+      if (timeOutWs.current) {
+        clearInterval(timeOutWs.current);
       }
     };
   }, [id]);
@@ -106,7 +108,7 @@ const ProductDetail = () => {
 
       switch (dataWS.type) {
         case TYPE_WS.PING: {
-          sendingWS(ws.current, { type: TYPE_WS.PONG});
+          sendingWS(ws.current, { type: TYPE_WS.PONG });
           break;
         }
         case TYPE_WS.ADD_COMMENT: {
@@ -140,24 +142,28 @@ const ProductDetail = () => {
     <WebSocketContext.Provider
       value={{ ws: ws.current, product_id: Number(id) }}
     >
-      <div className={styled["product__detail"]}>
-        <div className="product__detail-container">
-          <div className="product__detail-title">
-            <Link to="/">{TEXT_COMMON.SHOW_TEXT.HOME_PAGE} / </Link>
-            <Link to="/product/">{TEXT_COMMON.SHOW_TEXT.PRODUCT_PAGE} / </Link>
-            {product?.name}
-          </div>
-          <div className="product__detail-content">
-            <ProductContent product={product} />
-          </div>
-          <div className="product__detail-evaluate">
-            <ProductEvaluate product={product} />
-          </div>
-          <div className="product__detail-same">
-            <ProductSame product={product} />
+      <HelmetProduct product={product}>
+        <div className={styled["product__detail"]}>
+          <div className="product__detail-container">
+            <div className="product__detail-title">
+              <Link to="/">{TEXT_COMMON.SHOW_TEXT.HOME_PAGE} / </Link>
+              <Link to="/product/">
+                {TEXT_COMMON.SHOW_TEXT.PRODUCT_PAGE} /{" "}
+              </Link>
+              {product?.name}
+            </div>
+            <div className="product__detail-content">
+              <ProductContent product={product} />
+            </div>
+            <div className="product__detail-evaluate">
+              <ProductEvaluate product={product} />
+            </div>
+            <div className="product__detail-same">
+              <ProductSame product={product} />
+            </div>
           </div>
         </div>
-      </div>
+      </HelmetProduct>
     </WebSocketContext.Provider>
   );
 };
