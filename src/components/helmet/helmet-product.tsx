@@ -1,7 +1,6 @@
 import { isJson } from '@/utils/index'
 import React, { Fragment, useMemo } from 'react'
 import { Helmet } from 'react-helmet'
-import { useLocation } from 'react-router-dom'
 
 interface Props {
   children: React.ReactNode
