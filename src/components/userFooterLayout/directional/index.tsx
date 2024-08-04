@@ -4,7 +4,7 @@ const Directional = () => {
   return (
     <div className='directional layout__footer-contain'>
         <div className="directional__title">
-            <h3>Điều hướng</h3>
+            <span>Điều hướng</span>
         </div>
         <div className="directional__list">
             <ul>
