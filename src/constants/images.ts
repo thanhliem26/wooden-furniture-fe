@@ -73,7 +73,17 @@ import DefaultProduct from '@/assets/images/default/default_product.jpg';
 import StoreEmpty from '@/assets/images/default/store-empty.png';
 import ContactDefault from '@/assets/images/default/contact.jpg';
 
+//media
+import Zalo from '@/assets/images/media/zalo.png';
+import Phone from '@/assets/images/media/phone.png';
+import Mess from '@/assets/images/media/mess.png';
+
 export default {
+    //media
+    Zalo,
+    Phone,
+    Mess,
+    //
     SingIn,
     SingUp,
     Logo,

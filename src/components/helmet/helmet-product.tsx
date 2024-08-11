@@ -8,7 +8,6 @@ interface Props {
 }
 
 const HelmetProduct = ({ product, children }: Props) => {
-  console.log("🚀 ~ product:", product)
   const images = useMemo(() => {
     return product?.images && isJson(product?.images)
       ? JSON.parse(product?.images)?.[0]?.url
