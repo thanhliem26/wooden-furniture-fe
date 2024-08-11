@@ -3,6 +3,7 @@ import { Col, Row } from "antd";
 import Directional from "./directional";
 import Advertisement from "./advertisement";
 import AboutMe from "./aboutMe";
+import MediaComponent from "./media";
 
 const UserFooterLayout = () => {
 
@@ -21,6 +22,7 @@ const UserFooterLayout = () => {
           </Col>
         </Row>
       </div>
+      <MediaComponent />
       <div className="layout__footer-introduce">
         <p>© All rights reserved. Thiết kế website TL</p>
       </div>
