@@ -134,6 +134,62 @@
       }
     }
 
+    .media__component {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+
+      .zalo-wrapper {
+        box-shadow: 0 0 0 0 #2196f3;
+        background-color: rgba(33, 150, 243, 0.7) !important;
+      }
+
+      .phone-wrapper {
+        opacity: 0.7;
+        box-shadow: 0 0 0 0 #dd3333;
+        background-color: #dd3333 !important;
+      }
+
+      .icon-wrapper :local {
+        animation: 0.8s DevZoom infinite ease-in-out;
+      }
+
+      .icon-wrapper {
+        margin-bottom: 20px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #f0f0f0;
+        cursor: pointer;
+
+        .box-icon {
+          background-color: #e60808;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+
+          &.zalo-icon {
+            background-color: #2196f3;
+          }
+
+          img {
+            max-width: 27px;
+            max-height: 25px;
+          }
+        }
+
+        .box-icon :local {
+          animation: 0.8s shakeAnimation infinite ease-in-out;
+        }
+      }
+    }
+
     .layout__footer-introduce {
       margin: 15px 0;
     }
@@ -147,4 +203,37 @@
       }
     }
   }
+
+  @keyframes DevZoom {
+    70% {
+        box-shadow: 0 0 0 15px transparent
+    }
+    100% {
+        box-shadow: 0 0 0 0 transparent
+    }
+}
+
+  @keyframes shakeAnimation {
+    0% {
+        transform: rotate(0) scale(1) skew(1deg);
+    }
+    10% {
+        transform: rotate(-25deg) scale(1) skew(1deg);
+        }
+    20% {
+        transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    30% {
+        transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    40% {
+        transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    50% {
+        transform: rotate(0) scale(1) skew(1deg);
+    }
+    100% {
+        transform: rotate(0) scale(1) skew(1deg);
+    }
+}
 }
